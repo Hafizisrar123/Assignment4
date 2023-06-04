@@ -10,8 +10,8 @@ public class Employee {
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	private long id;
 
-	@lob
-	@column(columnDefintion="image")
+	@Lob
+	@Column(columnDefintion="image")
 	private byte[] image;
 	
 	@Column(name = "first_name")

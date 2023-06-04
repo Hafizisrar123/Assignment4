@@ -9,6 +9,10 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	private long id;
+
+	@lob
+	@column(columnDefintion="image")
+	private byte[] image;
 	
 	@Column(name = "first_name")
 	private String firstName;
@@ -24,6 +28,15 @@ public class Employee {
 	public void setId(long id) {
 		this.id = id;
 	}
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -42,4 +55,6 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 }
+

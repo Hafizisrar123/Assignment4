@@ -11,7 +11,7 @@ public class Employee {
 	private long id;
 
 	@Lob
-	@Column(columnDefintion="image")
+	@Column(columnDefinition="Mediumblob")
 	private byte[] image;
 	
 	@Column(name = "first_name")

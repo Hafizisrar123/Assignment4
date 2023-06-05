@@ -22,6 +22,10 @@
 				<tr>
 					<th>
 						<a th:href="@{'/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${reverseSortDir}}">
+							Avatar</a>
+					</th>
+					<th>
+						<a th:href="@{'/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${reverseSortDir}}">
 							Employee First Name</a>
 					</th>
 					<th>
@@ -37,6 +41,7 @@
 			</thead>
 			<tbody>
 				<tr th:each="employee : ${listEmployees}">
+					<td class="img" th:data="${employee.image}" th:text="${employee.image}"></td>
 					<td th:text="${employee.firstName}"></td>
 					<td th:text="${employee.lastName}"></td>
 					<td th:text="${employee.email}"></td>
@@ -70,5 +75,14 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		var img=document.getElementsByClassName("img");
+		for (const imgElement of img) {
+			var src1 = "data:image/png;base64," + imgElement.innerHTML;
+			var img=document.createElement("img");
+			img.src=src1;
+			imgElement.insertAdjacentElement("beforeend",img);
+		}
+	</script>
 </body>
 </html>
